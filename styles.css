@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Styling for the menu items */
+.menu-item {
+    border: 1px solid black;
+    background-color: #e0e0e0;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    min-height: 150px;
+}
+
+/* Positioning the title in the top right corner */
+.menu-item .title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #f08080;
+    padding: 5px 10px;
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+/* Specific colors for each section */
+.chicken .title {
+    background-color: #f8c6c6;
+}
+
+.beef .title {
+    background-color: #d9534f;
+}
+
+.sushi .title {
+    background-color: #f0ad4e;
+}
+
+/* Desktop layout: all sections in one row */
+@media (min-width: 992px) {
+    main {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .menu-item {
+        width: 30%;
+    }
+}
+
+/* Tablet layout: first two sections side by side, third section on the second row */
+@media (min-width: 768px) and (max-width: 991px) {
+    main {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .menu-item {
+        width: 48%;
+        margin-bottom: 20px;
+    }
+
+    .menu-item:nth-child(3) {
+        width: 100%;
+    }
+}
+
+/* Mobile layout: all sections stacked in a single column */
+@media (max-width: 767px) {
+    .menu-item {
+        width: 100%;
+    }
+}
